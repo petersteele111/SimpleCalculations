@@ -25,6 +25,10 @@ namespace SimpleCalculations
             // Instantiate type as menu
             SimpleCalculations menu = new SimpleCalculations();
 
+            // Generate the welcome screen/message on first load
+            GenerateConsole();
+            welcome();
+
             // Generate the Menu and respond to user's request
             while (true)
             {
@@ -64,6 +68,21 @@ namespace SimpleCalculations
             Console.ResetColor();
             Console.SetCursorPosition(1, 5);
         }
+
+        // Method to generate the welcome message
+        public static void welcome() {
+            Console.WriteLine(@"
+  Welcome to the Retirement Calculator v1.0!
+
+  I am glad you have decided to use this program. If you run into any issues, please don't hesitate to contact me.
+
+  I can be reached at info@pbsteele.com
+
+  Press any key to begin
+");
+            Console.CursorVisible = false;
+            Console.ReadKey();
+        }
         
         // Method to generate the menu
         public void getMenu() {
@@ -90,7 +109,7 @@ namespace SimpleCalculations
 
 
 
-  Option (1-5): ");
+  Option (1-3): ");
 
             // Set cursor to visible, since a method below hides it
             // This resets it to being visible on the menu screen
